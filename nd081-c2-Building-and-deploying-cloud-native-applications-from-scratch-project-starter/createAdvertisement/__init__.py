@@ -13,7 +13,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         try:
             url = os.environ["mycosmodbconnectionstring"]  # TODO: Update with appropriate MongoDB connection information
             client = pymongo.MongoClient(url)
-            database = client['azure']
+            database = client['cosmodb-7']
             collection = database['advertisements']
 
             rec_id1 = collection.insert_one(eval(request))
